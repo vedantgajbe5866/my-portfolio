@@ -42,7 +42,7 @@ function About() {
 
             <div className="info-box">
               <span>Email</span>
-              <p>vedantgajbe5866@gmail.com</p>
+              <p>gajbevedant1007@gmail.com</p>
             </div>
 
             <div className="info-box">
