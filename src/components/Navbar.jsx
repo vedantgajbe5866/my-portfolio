@@ -35,7 +35,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="navbar-inner">
         <a href="#home" className="navbar-logo">
-          Vedant.
+          Vedant
         </a>
 
         <nav className="navbar-desktop" aria-label="Primary navigation">

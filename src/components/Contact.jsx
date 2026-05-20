@@ -36,11 +36,11 @@ function Contact() {
 
           <div className="contact-card">
 
-            <div className="contact-icon">
+            <div className="contact-icon contact-card-icon">
               <FaEnvelope />
             </div>
 
-            <div>
+            <div className="contact-card-content">
               <span>Email</span>
               <p>gajbevedant1007@gmail.com</p>
             </div>
@@ -49,11 +49,11 @@ function Contact() {
 
           <div className="contact-card">
 
-            <div className="contact-icon purple">
+            <div className="contact-icon contact-card-icon purple">
               <FaPhoneAlt />
             </div>
 
-            <div>
+            <div className="contact-card-content">
               <span>Phone</span>
               <p>+91 9130887619</p>
             </div>
@@ -62,11 +62,11 @@ function Contact() {
 
           <div className="contact-card">
 
-            <div className="contact-icon blue">
+            <div className="contact-icon contact-card-icon blue">
               <FaMapMarkerAlt />
             </div>
 
-            <div>
+            <div className="contact-card-content">
               <span>Location</span>
               <p>Pune, Maharashtra, India</p>
             </div>
