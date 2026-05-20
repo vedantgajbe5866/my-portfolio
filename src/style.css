@@ -1321,21 +1321,55 @@ body{
 
 @media(max-width:768px){
 
+  html,
+  body {
+    width:100%;
+    overflow-x:hidden;
+  }
+
   .contact-section{
     padding:90px 16px 60px;
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    box-sizing:border-box;
   }
 
   .contact-top{
     margin-bottom:40px;
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
   }
 
-  .contact-top h2{
-    font-size:42px;
+  .contact-top h2,
+  .contact-right h3,
+  .connect-title {
+    font-size: clamp(28px, 7vw, 42px);
+    line-height:1.2;
+    margin:0 auto 12px;
+    max-width:100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .contact-subtext{
     font-size:16px;
     max-width:100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .contact-container,
+  .contact-wrapper,
+  .contact-card,
+  .social-box,
+  .social-card,
+  .contact-card-wrapper {
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    box-sizing:border-box;
   }
 
   .contact-container{
@@ -1360,14 +1394,15 @@ body{
   .contact-card{
     width:100%;
     max-width:100%;
-    padding:22px;
-    border-radius:22px;
     display:flex;
     align-items:center;
-    gap:16px;
+    gap:14px;
+    padding:16px;
+    border-radius:18px;
     border:1px solid rgba(255,255,255,0.08);
-    overflow:hidden;
+    overflow-x:hidden;
     justify-content:flex-start;
+    min-width:0;
   }
 
   .contact-card p{
@@ -1377,6 +1412,8 @@ body{
   .contact-card-content {
     flex:1;
     min-width:0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .contact-card-content span,
@@ -1386,12 +1423,12 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-word;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     display: block;
   }
 
   .contact-card-icon {
-    flex-shrink: 0;
+    flex-shrink:0;
   }
 
   .contact-icon {
@@ -1407,18 +1444,27 @@ body{
     width:100%;
     align-items:center;
     text-align:center;
+    background:inherit;
   }
 
   .social-grid{
     grid-template-columns:1fr;
     width:100%;
+    max-width:100%;
     gap:16px;
   }
 
-  .social-box{
+  .social-box,
+  .social-card{
     width:100%;
     max-width:100%;
-    padding:20px;
+    padding:16px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    border-radius:18px;
+    justify-content:center;
+    box-sizing:border-box;
   }
 
   .resume-btn{
