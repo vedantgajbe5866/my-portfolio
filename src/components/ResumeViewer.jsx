@@ -1,42 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function ResumeViewer({ src }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
-  const [pdfUrl, setPdfUrl] = useState(null)
-
-  useEffect(() => {
-    let active = true
-    let objectUrl = null
-
-    setLoading(true)
-    setError(false)
-
-    fetch(src)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Unable to load PDF (${response.status})`)
-        }
-        return response.blob()
-      })
-      .then((blob) => {
-        if (!active) return
-        objectUrl = URL.createObjectURL(blob)
-        setPdfUrl(objectUrl)
-        setLoading(false)
-      })
-      .catch((err) => {
-        console.error(err)
-        if (!active) return
-        setError(true)
-        setLoading(false)
-      })
-
-    return () => {
-      active = false
-      if (objectUrl) URL.revokeObjectURL(objectUrl)
-    }
-  }, [src])
 
   return (
     <div className="resume-viewer">
@@ -45,28 +11,43 @@ export default function ResumeViewer({ src }) {
           {!error ? (
             <>
               <div className="spinner" />
-              <span>Loading preview</span>
+              <span>Loading resume preview</span>
             </>
           ) : (
             <>
-              <span>Unable to load resume preview</span>
+              <span>Unable to preview resume</span>
               <p style={{ marginTop: 8, fontSize: 13, color: '#fca5a5' }}>
-                Open full screen or download instead.
+                Open the resume directly if the preview is blocked.
               </p>
             </>
           )}
         </div>
       )}
 
-      {pdfUrl && !error && (
-        <div className="viewer-embed">
-          <iframe
-            title="Resume preview"
-            src={pdfUrl}
-            onLoad={() => setLoading(false)}
-            className="resume-iframe"
-            frameBorder="0"
-          />
+      {!error && (
+        <iframe
+          title="Resume Preview"
+          src={src}
+          onLoad={() => setLoading(false)}
+          onError={() => {
+            setLoading(false)
+            setError(true)
+          }}
+          className="resume-iframe"
+          loading="lazy"
+          frameBorder="0"
+        />
+      )}
+
+      {error && (
+        <div className="viewer-fallback" style={{ padding: '24px', textAlign: 'center' }}>
+          <button
+            type="button"
+            className="btn modal-download"
+            onClick={() => window.open(src, '_blank')}
+          >
+            Open Resume
+          </button>
         </div>
       )}
     </div>

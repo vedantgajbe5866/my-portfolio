@@ -7,7 +7,7 @@ const socials = [
   { label: 'GitHub', icon: <FaGithub />, href: 'https://github.com/vedantgajbe5866' },
   { label: 'LinkedIn', icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/vedantgajbe10?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
   { label: 'Instagram', icon: <FaInstagram />, href: 'https://www.instagram.com/vedant_gajbe_vg1210?igsh=YmRqbHU4bzMyMXlo' },
-  { label: 'Email', icon: <FiMail />, href: 'gajbevedant1007@gmail.com' },
+  { label: 'Email', icon: <FiMail />, href: 'mailto:gajbevedant1007@gmail.com' },
   { label: 'Contact', icon: <FiPhone />, href: 'tel:+919130887619' }
 ]
 

@@ -14,6 +14,8 @@ const containerVariant = {
   exit: { opacity: 0, scale: 0.95 },
 }
 
+const resumeUrl = '/resume/Vedant-Gajbe-Resume.pdf'
+
 export default function ResumeModal({ onClose }) {
   const overlayRef = useRef(null)
 
@@ -63,33 +65,18 @@ export default function ResumeModal({ onClose }) {
 
           <div className="modal-actions">
             <a
-              href="#"
+              href={resumeUrl}
+              download="Vedant-Gajbe-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn modal-download"
-              onClick={async (e) => {
-                e.preventDefault()
-                try {
-                  const resp = await fetch('/resume.pdf')
-                  const blob = await resp.blob()
-                  const url = URL.createObjectURL(blob)
-                  const a = document.createElement('a')
-                  a.href = url
-                  a.download = 'Vedant_Gajbe_Resume.pdf'
-                  document.body.appendChild(a)
-                  a.click()
-                  a.remove()
-                  URL.revokeObjectURL(url)
-                } catch (err) {
-                  // fallback: open in new tab
-                  window.open('/resume.pdf', '_blank')
-                }
-              }}
             >
               Download Resume
             </a>
 
             <button
               className="btn-outline"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open(resumeUrl, '_blank')}
             >
               Open Full Screen
             </button>
@@ -105,38 +92,24 @@ export default function ResumeModal({ onClose }) {
         </header>
 
         <main className="modal-body">
-          <ResumeViewer src="/resume.pdf" />
+          <ResumeViewer src={resumeUrl} />
         </main>
 
         <div className="modal-footer">
           <div className="footer-actions">
             <a
-              href="#"
+              href={resumeUrl}
+              download="Vedant-Gajbe-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn modal-download"
-              onClick={async (e) => {
-                e.preventDefault()
-                try {
-                  const resp = await fetch('/resume.pdf')
-                  const blob = await resp.blob()
-                  const url = URL.createObjectURL(blob)
-                  const a = document.createElement('a')
-                  a.href = url
-                  a.download = 'Vedant_Gajbe_Resume.pdf'
-                  document.body.appendChild(a)
-                  a.click()
-                  a.remove()
-                  URL.revokeObjectURL(url)
-                } catch (err) {
-                  window.open('/resume.pdf', '_blank')
-                }
-              }}
             >
               Download Resume
             </a>
 
             <button
               className="btn-outline"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open(resumeUrl, '_blank')}
             >
               Open Full Screen
             </button>
