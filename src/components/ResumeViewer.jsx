@@ -3,6 +3,7 @@ import { useState } from 'react'
 export default function ResumeViewer({ src }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const viewerSrc = `${src}#toolbar=1&navpanes=0&scrollbar=1&view=FitH`
 
   return (
     <div className="resume-viewer">
@@ -25,18 +26,19 @@ export default function ResumeViewer({ src }) {
       )}
 
       {!error && (
-        <iframe
-          title="Resume Preview"
-          src={src}
-          onLoad={() => setLoading(false)}
-          onError={() => {
-            setLoading(false)
-            setError(true)
-          }}
-          className="resume-iframe"
-          loading="lazy"
-          frameBorder="0"
-        />
+        <div className="viewer-embed">
+          <iframe
+            title="Resume Preview"
+            src={viewerSrc}
+            onLoad={() => setLoading(false)}
+            onError={() => {
+              setLoading(false)
+              setError(true)
+            }}
+            className="resume-iframe"
+            loading="lazy"
+          />
+        </div>
       )}
 
       {error && (
