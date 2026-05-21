@@ -5,6 +5,7 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import ResumeButton from './ResumeButton'
 
 function Contact() {
   return (
@@ -105,13 +106,7 @@ function Contact() {
 
           </div>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="resume-btn"
-          >
-            Download Resume
-          </a>
+          <ResumeButton className="resume-btn" />
 
         </div>
 

@@ -26,7 +26,7 @@ export default function Footer() {
       </div>
 
       <motion.div
-        className="footer-inner"
+        className="footer-container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -40,7 +40,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="footer-socials">
+        <div className="footer-social">
           {socials.map((item) => (
             <motion.a
               key={item.label}
@@ -57,19 +57,19 @@ export default function Footer() {
           ))}
         </div>
 
-        <nav className="footer-links" aria-label="Footer navigation">
+        <nav className="footer-nav" aria-label="Footer navigation">
           {navLinks.map((link) => (
             <a key={link} href={`#${link.toLowerCase()}`}>
               {link}
             </a>
           ))}
         </nav>
-      </motion.div>
 
-      <div className="footer-bottom">
-        <p>© 2026 Vedant Gajbe. All Rights Reserved.</p>
-        <p>Built with React.js & Tailwind CSS</p>
-      </div>
+        <div className="footer-bottom">
+          <p>© 2026 Vedant Gajbe. All Rights Reserved.</p>
+          <p>Built with React.js & Tailwind CSS</p>
+        </div>
+      </motion.div>
     </footer>
   )
 }

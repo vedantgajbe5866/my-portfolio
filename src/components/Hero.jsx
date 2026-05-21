@@ -1,5 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import ResumeButton from './ResumeButton'
 
 import heroImg from "../assets/hero.png";
 
@@ -66,13 +67,8 @@ function Hero() {
             View Projects
           </a>
 
-          <a
-            href="/resume.pdf"
-            download
-            className="btn-outline"
-          >
-            Download Resume
-          </a>
+          {/* Resume preview button opens modal instead of direct download */}
+          <ResumeButton className="btn-outline" />
 
         </div>
 
