@@ -11,7 +11,7 @@ export default function ResumeButton({ className }) {
         className={className ? className : 'resume-btn'}
         onClick={() => setOpen(true)}
       >
-        Download Resume
+        View Resume
       </button>
 
       {open && <ResumeModal onClose={() => setOpen(false)} />}
